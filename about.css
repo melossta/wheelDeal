@@ -1,0 +1,120 @@
+#services{
+ margin-top: 150px;
+}
+
+.sboxWrapper{
+    overflow: hidden;
+}
+
+
+.singleBox{
+    width: 212px;
+    text-align: center;
+    background: white;
+    padding: 15px;
+    float: left;
+    margin: 0px 21px;
+    border-radius: 25px;
+}
+
+.sboxTitle h2 {
+    font-size: 22px;
+    letter-spacing: -1.1px;
+    color: #333;
+    line-height: 28px;
+    text-transform: uppercase;
+    margin: 25px 0px;
+}
+
+.sboxTitle {
+    width: 176px;
+    text-align: center;
+    margin: auto;
+}
+
+.sboxIcon {
+    text-align: center;
+    margin: 25px 0px;
+    font-size: 30px;
+    color: #fb5200;
+}
+
+.sboxDesc {
+    text-align: center;
+    margin: 25px 0px;
+}
+
+.sboxLink{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sboxLink a {
+    /* text-align: center; */
+    text-decoration: none;
+    color: #fb5200;
+    font-weight: 600;
+}
+
+/*text text text text text text*/
+
+body.dark,body .aboutUsText p {
+    font-size: 21px;
+
+}
+
+
+body.dark .aboutUsText li{
+    font-size: 26px;
+    color: var(--text-color) ;
+}
+
+body.dark .aboutUsText h1{
+    margin-top: 100px;
+    font-size: 40px;
+    color: var(--text-color) ;
+}
+body .aboutUsText h1{
+    margin-top: 100px;
+    font-size: 40px;
+    color: black ;
+}
+
+body .aboutUsText li{
+    font-size: 26px;
+    color: black ;
+}
+
+.about  {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.aboutUsText{
+    flex: 1;    
+}
+
+
+.aboutUsList li {
+    display: inline-block;
+
+}
+.aboutUsList {
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+.aboutUsList li {
+    flex: 1;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.aboutUsList1 li {
+margin-top: 26px;
+text-align: center;
+list-style: none;
+
+}

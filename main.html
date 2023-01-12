@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="main.css">
+        
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href='boxicons.css' rel='stylesheet'>
+
+    <!--<title>Responsive Navigation Menu Bar</title>-->
+    <style>
+        .popup1 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content1 {
+  background-color: transparent;
+  margin: auto;
+  padding: 20px;
+  width: 26%;
+  text-align: center;
+}
+
+
+.popup-close-button1 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.popup-close-button1:hover,
+.popup-close-button1:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup1 .form1{ 
+  width:340px;
+  height:440px;
+  background:#e6e6e6;
+  border-radius:8px;
+  box-shadow:0 0 40px -10px #000;
+  box-sizing:border-box;
+  font-family:'Montserrat',sans-serif;
+}
+
+.popup-content1 h2{
+  margin:10px 0;
+  padding-bottom:10px;
+  width:180px;
+  color:#78788c;
+  border-bottom:3px solid #78788c
+}
+
+.popup-content1 input{width:100%;
+  padding:10px;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  font-family:'Montserrat',sans-serif;
+  transition:all .3s;
+  border-bottom:2px solid #bebed2
+}
+
+.popup-content1 input:focus{
+  border-bottom:2px solid #78788c
+}
+
+.popup-content1 p:before{
+  content:attr(type);
+  display:block;
+  margin:28px 0 0;
+  margin-left: 31px;
+  font-size:14px;
+  color:#5a5a5a;
+  text-align: left;
+  }
+
+.popup-content1 button{float:right;
+  padding:8px 12px;
+  margin:8px 0 0;
+  margin-right: 5px;
+  font-family:'Montserrat',sans-serif;
+  border:2px solid #78788c;
+  background:0;color:#5a5a6e;
+  cursor:pointer;
+  transition:all .3s
+}
+
+.popup-content1 button:hover{
+  background:#78788c;
+  color:#fff
+}
+
+.popup-content1 div{
+  margin-left: 100px;
+  margin-top: 90px; 
+  background:#50505a;
+  color:#fff;
+  width:320px;
+  padding:16px 4px 16px 0;
+  border-radius:6px;
+  font-size:13px;
+  box-shadow:10px 10px 40px -14px #000
+}
+
+.popup-content1 .phone span{
+  margin:10px11 5px 0 15px;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">Autos</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Autos</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                      
+                    <li><button id="contact" style="background-color: transparent; border:none;"><a href="#">Contact</a></button></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<script>
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+
+// js code to toggle dark and light mode
+      modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+
+// js code to toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+      });
+</script>
+
+<div>
+    <div id="popup1" class="popup1">
+        <div class="popup-content1">
+          <span class="popup-close-button1">&times;</span>
+          <form class="form1">
+            <h2>CONTACT US</h2>
+            <p type="Name:"><input placeholder="Write your name here.."></input></p>
+            <p type="Email:"><input placeholder="Let us know how to contact you back.."></input></p>
+            <p type="Message:"><input placeholder="What would you like to tell us.."></input></p>
+            <button id="closeNow" class="closeNow">Send Message</button>
+            <div class="phone">
+              <span class="phone"><h4 style="font-weight: 200; margin-right: 35px;">Phone: 044 432 151</h4></span>
+              <span class="phone"><h4 style="font-weight: 200;">Email: wheel@deal.com</h4></span> 
+            </div>
+          </form>
+        </div>
+    
+        <script>
+            const orderit1 = document.getElementById("contact");
+            const popup1 = document.getElementById("popup1");
+            const popupCloseButton1 = document.querySelector(".popup-close-button1");
+            const popupCloseButton2 = document.querySelector(".closeNow");
+    
+            orderit1.addEventListener("click", () => {
+            popup1.style.display = "block";
+            });
+    
+            popupCloseButton1.addEventListener("click", () => {
+            popup1.style.display = "none";
+            });
+            popupCloseButton2.addEventListener("click", () => {
+            popup1.style.display = "none";
+            });
+    
+        </script>
+</div>
+    
+
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <img src="/images/AUDI.JPG" style="width:100%; height: 500px;">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="/images/bmwm4/bmwm4.jpg" style="width:100% ; height: 500px;">
+    </div>
+    <div class="mySlides fade">
+        <img src="/images/mercedesE63/e632.jpg" style="width:100% ; height: 500px;">
+    </div>
+    <div class="mySlides fade">
+        <img src="/images/audirs6/audirs1.jpeg" style="width:100% ; height: 500px;">
+    </div>
+    <div class="mySlides fade">
+        <img src="/images/bmwm5/m52.jpg" style="width:100% ; height: 500px;">
+    </div>
+    <div class="mySlides fade">
+        <img src="/images/mercedesgle63s/gle632.jpeg" style="width:100% ; height: 500px;">
+    </div>
+    <div class="mySlides fade">
+        <img src="/images/audia6/audia63.jpeg" style="width:100% ; height: 500px;">
+    </div>
+    <div class="mySlides fade">
+        <img src="/images/bmwz4/z42.jpg" style="width:100% ; height: 500px;">
+    </div>
+
+  
+
+  </div>
+  <br>
+  
+
+  <script>
+    let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 10000); // Change image every 2 seconds
+}
+</script>
+</div>
+
+<br>
+<div class="wrapper">
+ <br><br> <br>
+    <div class="cols">
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                      <div class="front" style="background-image: url(/images/audirs6/audirs1.jpeg)">
+                          <div class="inner">
+                              <p>Audi</p>
+
+                          </div>
+                      </div>
+                      <div class="back">
+                          <div class="inner">
+                            <a href="shop.html#sectionaudi" style="text-decoration:none ; color: white; "><p>Buy Here</p></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                      <div class="front" style="background-image: url(/images/mercedesg63/g63.jpeg)">
+                          <div class="inner">
+                              <p>Mercedes</p>
+                          </div>
+                      </div>
+                      <div class="back">
+                          <div class="inner">
+                            <a href="shop.html#sectionmercedes" style="text-decoration:none ; color: white; "><p>Buy Here</p></a>                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                      <div class="front" style="background-image: url(/images/bmw.jpeg)">
+                          <div class="inner">
+                              <p>BMW</p>
+                          </div>
+                      </div>
+                      <div class="back">
+                          <div class="inner">
+                            <a  href="shop.html#sectionbmw" style="text-decoration:none ; color: white; "><p>Buy Here</p></a>      
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                      <div class="front" style="background-image: url(/images/golf.jpg)">
+                          <div class="inner">
+                              <p>Golf</p>
+                          </div>
+                      </div>
+                      <div class="back">
+                          <div class="inner">
+                            <a href="shop.html#sectiongolf" style="text-decoration:none ; color: white; "><p>Coming Soon...</p></a>                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+   </div>
+
+
+</body>
+</html>

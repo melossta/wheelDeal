@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="shop.css">
+        
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--<title>Responsive Navigation Menu Bar</title>-->
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">Shop</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Shop</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                      
+                       
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<script>
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle");
+
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+
+// js code to toggle dark and light mode
+      modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+
+// js code to toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+      });
+ 
+// go to another file
+function gotoRS6() {
+  // Navigate to the other HTML file
+  window.location = '/AudiRS6Avant.html';
+}    
+
+function gotoA6() {
+  // Navigate to the other HTML file
+  window.location = '/AudiA6.html';
+}    
+
+function gotoRS7() {
+  // Navigate to the other HTML file
+  window.location = '/AudiRS7.html';
+} 
+
+function gotoRSQ8() {
+  // Navigate to the other HTML file
+  window.location = '/AudiRSQ8.html';
+} 
+
+function gotoC63() {
+  // Navigate to the other HTML file
+  window.location = '/mercedesc63.html';
+} 
+
+function gotoG63() {
+  // Navigate to the other HTML file
+  window.location = '/mercedesg63.html';
+} 
+
+function gotoGLE63s() {
+  // Navigate to the other HTML file
+  window.location = '/mercedesgle63s.html';
+} 
+
+function gotoE63() {
+  // Navigate to the other HTML file
+  window.location = '/mercedese63.html';
+} 
+
+function gotoM4() {
+  // Navigate to the other HTML file
+  window.location = '/bmwm4.html';
+} 
+
+function gotoM5() {
+  // Navigate to the other HTML file
+  window.location = '/bmwm5.html';
+} 
+
+function gotoZ4() {
+  // Navigate to the other HTML file
+  window.location = '/bmwz4.html';
+} 
+
+function gotoXI() {
+  // Navigate to the other HTML file
+  window.location = '/bmwxI.html';
+} 
+
+</script>
+
+ <br><br><br>   
+<div class="logo">
+    <img id="sectionaudi" src="/images/Audi-logo-icon-on-transparent-background-PNG.png" alt="">
+</div>
+
+<div class="grid-container">   
+    <div class="card" class="grid-item">
+        <img src="/images/audiRS6avant.jpeg" alt="Audi A5" style="width:100%">
+        <h1>Audi RS6 Avant </h1>
+        <p><button onclick="gotoRS6()">Order it</button></p>
+        <script></script>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/audiA6sell.jpeg" alt="Audi A6" style="width:100%">
+        <h1>Audi A6</h1>
+        <p><button onclick="gotoA6()">Order it</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/audiRS7Sportsell.jpeg" alt="Audi RS7" style="width:100%">
+        <h1>Audi RS7 </h1>
+        <p><button onclick="gotoRS7()">Order it</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/audiRSQ8sellB.jpeg" alt="Audi RSQ8" style="width: 100%">
+        <h1>Audi RSQ8</h1>
+        <p><button onclick="gotoRSQ8()">Order it</button></p>
+    </div>
+</div>
+
+<div class="logo" style="margin-top: 30px;">
+    <img id="sectionmercedes" src="/images/Mercedeslogo.png" alt="">
+</div>
+
+<div class="grid-container">  
+    <div class="card" class="grid-item">
+        <img src="/images/mercedesC63.jpeg" alt="Audi A5" style="width:100%">
+        <h1>Mercedes C63 AMG S Coupe </h1>
+        <p><button onclick="gotoC63()">Order it</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/mercedesG63.jpeg" alt="Audi A6" style="width:100%">
+        <h1>Mercedes G63 AMG</h1>
+        <p><button onclick="gotoG63()">Order it</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/mercedesGLE63S.jpeg" alt="Audi RS7" style="width:100%">
+        <h1>Mercedes GLE63 S</h1>
+        <p><button onclick="gotoGLE63s()">Order it</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/mercedesE63.jpeg" alt="Audi RSQ8" style="width: 100%">
+        <h1>Mercedes E63 AMG</h1>
+        <p><button onclick="gotoE63()">Order it</button></p>
+    </div>
+</div>
+
+<div class="logo" style="margin-top: 30px;">
+    <img style="width: 300px;" id="sectionbmw" src="/images/bmwlogo.png" alt="">
+</div>
+
+<div class="grid-container">  
+    <div class="card" class="grid-item">
+        <img src="/images/bmwM4.jpeg" alt="Audi A5" style="width:100%">
+        <h1>BMW M4 </h1>
+        <p><button onclick="gotoM4()">Order it</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/bmwIX.jpeg" alt="Audi A6" style="width:100%">
+        <h1>BMW IX</h1>
+        <p><button onclick="gotoXI()">Order it</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/bmwM5.jpeg" alt="Audi RS7" style="width:100%">
+        <h1>BMW M5</h1>
+        <p><button onclick="gotoM5()">Order it</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/bmwZ4.jpeg" alt="Audi RSQ8" style="width: 100%">
+        <h1>BMW Z4</h1>
+        <p><button onclick="gotoZ4()">Order it</button></p>
+    </div>
+</div>
+
+<div class="logo" style="margin-top: 30px; margin-bottom: 10px;" >
+    <img style="width: 300px;" id="sectiongolf"  src="/images/golflogo.png" alt="">
+</div>
+
+<div class="grid-container">  
+    <div class="card" class="grid-item">
+        <img src="/images/golf8.jpeg" alt="Audi A5" style="width: 300px;height: 200px ;">
+        <h1>Golf MK8 </h1>
+        <p><button>Coming Soon...</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/arteon.jpeg" alt="Audi A6" style="width: 300px;height: 200px ;">
+        <h1>Arteon</h1>
+        <p><button>Coming Soon...</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/tiguan.jpeg" alt="Audi RS7" style="width: 300px;height: 200px ;">
+        <h1>Tiguan</h1>
+        <p><button>Coming Soon...</button></p>
+    </div>
+    <div class="card" class="grid-item">
+        <img src="/images/touareg.jpeg" alt="Audi RSQ8" style="width: 300px;height: 200px ;">
+        <h1>Touareg</h1>
+        <p><button>Coming Soon...</button></p>
+    </div>
+</div>
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

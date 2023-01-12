@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi RSQ8</title>
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="AudiRS6Avant.css">
+        
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!--<title>Responsive Navigation Menu Bar</title>-->
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">Autos</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Autos</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                      
+                       
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<script>
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+
+// js code to toggle dark and light mode
+      modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+
+// js code to toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+      });
+</script>
+
+
+
+
+
+<!-- Slideshow container and Tab-->
+<div> 
+    <div>
+        <div class="tab" style="position: absolute; margin-left: 1000px;">
+            <button  class="tablinks" onclick="openDetails(event, 'Specs')">Specs</button>
+            <button class="tablinks" onclick="openDetails(event, 'Coustumize')">Coustumize</button>
+            <button class="tablinks" onclick="openDetails(event, 'Orderit')">Order it</button>
+            </div>
+            
+        
+            <script>            
+            function openDetails(evt, details) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(details).style.display = "block";
+            evt.currentTarget.className += " active";
+            }
+
+            </script>
+
+    </div>
+
+
+        <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+        <div class="numbertext">1 / 5</div>
+        <img src="/images/audirsq8/audirsq81.jpeg" style="width:100%; height: 500px;">
+        <div class="text">Audi RSQ8</div>
+        </div>
+    
+        <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+        <img src="/images/audirsq8/audirsq82.jpeg" style="width:100%; height: 500px;">
+        <div class="text">Audi RSQ8</div>
+        </div>
+    
+        <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <img src="/images/audirsq8/audirsq83.jpeg" style="width:100%; height: 500px;">
+        <div class="text">Audi RSQ8</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 5</div>
+            <img src="/images/audirsq8/audirsq84.jpeg" style="width:100%; height: 500px;">
+            <div class="text">Audi RSQ8</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="/images/audirsq8/audirsq85.jpeg" style="width:100%; height: 500px;">
+            <div class="text">Audi RSQ8</div>
+        </div>
+</div>
+
+</div>
+<div id="Coustumize" class="tabcontent">
+    
+    <div class="colorbutton">
+        <div class="engine">
+            <h1 >Choose a engine:</h1>
+            <select class="dropdown1"  >
+            <option class="dropdown" value="apple">Twin Turbo Premium Unleaded V-8</option>
+            </select>
+
+        </div>
+        <div class="color">
+            <h1>Choose the color: </h1>
+            <button id="price-button" class="button1">Button 1</button>
+            <button id="price-button1" class="button2">Button 2</button>
+            <button id="price-button2" class="button3">Button 3</button>
+            <button id="price-button3" class="button4">Button 4</button>
+            <button id="price-button4" class="button5">Button 5</button>
+        </div>
+            
+        <script>
+
+            const buttons = document.querySelectorAll('.button1, .button2, .button3, .button4, .button5');
+        
+                buttons.forEach(button => {
+                button.addEventListener('click', event => {
+                    buttons.forEach(button => {
+                    button.style.outline = 'none';
+                    });
+                    event.target.style.outline = '4px solid white';
+                });
+                });
+        </script>
+        <div class="wheels">
+
+            <h1>Choose the wheels: </h1>
+            <img id="img1" class="photo" src="/images/audirs6/wheels1.png" alt="">
+            <img id="img2" class="photo" src="/images/audirs6/fellne2.png" alt="">
+            <img id="img3" class="photo" src="/images/audirs6/fellne3.png" alt="">
+            <img id="img4" class="photo" src="/images/audirs6/fellne4.png" alt="">
+            <script>
+                
+                //const photos = document.querySelectorAll(".photo");
+
+                //for (const photo of photos) {
+                //photo.addEventListener("click", function() {
+               //     this.classList.toggle("outlined");
+                //});
+                //}
+                const photos = document.querySelectorAll(".photo");
+
+                for (const photo of photos) {
+                photo.addEventListener("click", function() {
+                    // Remove the outlined class from all photos
+                    for (const otherPhoto of photos) {
+                    otherPhoto.classList.remove("outlined");
+                    }
+                    // Add the outlined class to the selected photo
+                    this.classList.add("outlined");
+                });
+                }
+                
+                    
+            </script>
+            <script>
+
+                buttons.forEach(button => {
+                button.addEventListener("click", event => {
+                    buttons.forEach(button => {
+                    button.style.outline = "none";
+                    });
+                    event.target.style.outline = "4px solid white";
+                    photos.forEach(photo => {
+                    photo.classList.remove("outlined");
+                    });
+                });
+                });
+
+            </script>
+            
+
+        </div>
+        <div class="wheels">
+            <h1 style="font-size: 30px;" id="price-text" > $125,995</h1>
+            <script>
+                const button1 = document.getElementById("price-button");
+                const button2 = document.getElementById("price-button1");
+                const button3 = document.getElementById("price-button2");
+                const button4 = document.getElementById("price-button3");
+                const button5 = document.getElementById("price-button4");
+                const img1 = document.getElementById("img1")
+                const img2 = document.getElementById("img2")
+                const img3 = document.getElementById("img3")
+                const img4 = document.getElementById("img4")
+                const text = document.getElementById("price-text");
+        
+                function changeText(newText) {
+                text.innerHTML = newText;
+                localStorage.setItem("text", newText);
+                }
+        
+                button1.addEventListener("click", () => changeText("Price: $126,435"));
+                button2.addEventListener("click", () => changeText("Price: $128,235"));
+                button3.addEventListener("click", () => changeText("Price: $127,237"));
+                button4.addEventListener("click", () => changeText("Price: $129,923"));
+                button5.addEventListener("click", () => changeText("Price: $128,239"));
+                img1.addEventListener("click", () => changeText("Price: $131,523"));
+                img2.addEventListener("click", () => changeText("Price: $132,234"));
+                img3.addEventListener("click", () => changeText("Price: $133,000"));
+                img4.addEventListener("click", () => changeText("Price: $131,233"));
+                
+                
+            </script>
+        
+        
+        </div>
+
+    </div>
+</div>
+<div id="Specs" class="tabcontent">
+    <table class="specs">
+        <tr>
+            <td id="title"><h1>VEHICLE TYPE</h1></td>
+            <td><h1>Vehicle Type: front-engine, all-wheel-drive, 5-passenger, 4-door wagon</h1></td>
+        </tr>
+        <tr>
+            <td id="title"><h1>Displacement</h1></td>
+            <td><h1>244 in <sup>3</sup>, 4.0L</h1></td>
+        </tr>
+        <tr>
+            <td id="title"><h1>Power</h1></td>
+            <td><h1>591 hp @ 6400 rpm</h1></td>
+        </tr>
+        <tr>
+            <td id="title"><h1>Torque</h1></td>
+            <td><h1>590 lb-ft @ 1370 rpm</h1></td>
+        </tr>
+        <tr>
+            <td id="title"><h1>Transmission</h1></td>
+            <td><h1> Automatic w/OD Quattro permanent all-wheel drive 8-speed tiptronic</h1></td>
+        </tr>
+        <tr>
+            <td id="title"><h1>Test Results</h1></td>
+            <td><h1>Top speed in km/h (mph) 250 (155.3) <br> Acceleration, 0-100 km/h (0-62.1 mph) 3.8</h1></td>
+        </tr>
+    </table>
+</div>
+<div id="Orderit" class="tabcontent">
+    <div class="testbox">
+        <form >
+          <div class="itemName">
+            <p>Name</p>
+            <div class="name-item">
+              <input class="colorOrder" type="text" name="name" placeholder="First" />
+              <input class="colorOrder" type="text" name="name" placeholder="Last" />
+            </div>
+          </div>
+          <div class="itemEmail">
+            <p>Email</p>
+            <input style="width: 460px;" class="colorOrder" type="text" name="name" placeholder="Email"/>
+          </div>
+          <div class="itemPhone">
+            <p>Phone</p>
+            <input style="width: 460px;" class="colorOrder" type="text" name="name" placeholder="Phone"/>
+          </div>
+          <div class="itemContact">
+            <p>Contact Address</p>
+            <input class="colorOrder" type="text" name="name" placeholder="Street address" />
+            <input class="colorOrder" style="color: black;" type="text" name="name" placeholder="Street address line 2" />
+            <div class="city-item">
+              <input class="colorOrder" type="text" name="name" placeholder="City" />
+              <input class="colorOrder" type="text" name="name" placeholder="Region" />
+              <br>
+              <input class="colorOrder" type="text" name="name" placeholder="Postal / Zip code" />
+              <select style="width: 225px;" class="colorOrder">
+                <option value="">Country</option>
+                <option value="1">Russia</option>
+                <option value="2">Germany</option>
+                <option value="3">France</option>
+                <option value="4">Armenia</option>
+                <option value="5">USA</option>
+              </select>
+              <div id="existing-div-id">
+                <h2 style="font-size: 30px; text-align: left; font-weight: bold; " id="price-text" > Price: $123,995</h2>
+                  <script>
+                      const existingDiv = document.getElementById("existing-div-id");
+                      function changeText(newText) {
+                      text.innerHTML = newText;
+                      existingDiv.innerHTML = newText;
+                      localStorage.setItem("text", newText);
+                  }
+          
+                  </script>   
+              
+              
+            </div>
+            </div>
+
+          
+
+          </div>          
+        </form>
+        <div class="OrderNow" >
+            <button id="orderit" class="orderit" type="submit" >Order Now</button>
+          </div>
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="popup-close-button">&times;</span>
+              <img style="width: 200px;" src="check.png.png" alt="">
+              <h1>Thank you for your order!</h1>
+              <p>Your order for a car has been successfully placed.<br>We will process your order and contact you soon to confirm the details of your purchase.</p>
+              <p>In the meantime, if you have any questions, please don't hesitate to contact us.</p>
+              <p>Thank you for choosing our company, we are looking forward to working with you.</p>
+            </div>
+    
+            <script>
+                const orderit = document.getElementById("orderit");
+                const popup = document.getElementById("popup");
+                const popupCloseButton = document.querySelector(".popup-close-button");
+    
+                orderit.addEventListener("click", () => {
+                popup.style.display = "block";
+                });
+    
+                popupCloseButton.addEventListener("click", () => {
+                popup.style.display = "none";
+                window.location.replace("/main.html")
+                });
+    
+            </script>
+          </div>
+      </div>
+    </div>  
+
+
+
+</div>
+
+
+  <br>
+  
+
+  <script>
+    let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 10000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>
